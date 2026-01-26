@@ -1,0 +1,117 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+ /* font-family: Arial, Helvetica, sans-serif;*/
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url("background.jpg"); /* depois trocamos pela imagem emo */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+
+/* Card central */
+.card {
+  background: rgba(0, 0, 0, .65);
+  color: #000000;
+  max-width: 420px;
+  width: 90%;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("de_repente_triste.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Título */
+.card h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.subtitulo {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.infos{
+  display: flex;
+ background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  padding: 8px 14px;
+  margin: 10px auto;
+  font-size: 16px;
+  justify-content: center;
+  gap: 6px;
+  flex-direction: column;
+  align-items: center;
+  color: #ffd1dc;
+}
+
+
+/* Link do mapa */
+.mapa {
+  display: inline-block;
+  margin: 15px 0;
+  color: #ffd1dc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Área dos botões */
+.botoes {
+  margin-top: 20px;
+}
+
+/* Botões base */
+.botoes {
+  background: none;
+  border: none;
+  color: #ffb6c1;
+  font-size: 16px;
+  margin: 12px 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#walker {
+  position: fixed;
+  width: 140px;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+#jacob {
+  position: fixed;
+  width: 120px;
+  display: none;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#walker,
+#jacob {
+  pointer-events: none;
+}
