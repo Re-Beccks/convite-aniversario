@@ -4,6 +4,7 @@
  /* font-family: Arial, Helvetica, sans-serif;*/
 }
 
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -32,7 +33,6 @@ body {
   z-index: 10;
 }
 
-
 .card::before {
   content: "";
   position: absolute;
@@ -48,6 +48,11 @@ body {
 .card h1 {
   font-size: 28px;
   margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffd1dc;
+  padding: 8px 12px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 /* Subtítulo */
