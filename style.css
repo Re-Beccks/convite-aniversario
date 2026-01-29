@@ -22,16 +22,16 @@ body {
 .card {
   background: rgba(0, 0, 0, .65);
   color: #000000;
-  max-width: 420px;
-  width: 90%;
-  padding: 25px;
+  width: 100%;
+  max-width: 380px;
+  padding: 28px;
+  margin: 0 16px;
   border-radius: 16px;
   text-align: center;
   position: relative;
   z-index: 10;
-  overflow: hidden;
-  
 }
+
 
 .card::before {
   content: "";
@@ -118,24 +118,7 @@ body {
 
 @media (max-width: 480px) {
   .card {
-    max-width: 90%;      /* quase toda a tela */
-    padding: 30px 20px;  /* mais espaçamento interno */
-  }
-
-  .card h1 {
-    font-size: 32px;     /* título maior */
-  }
-
-  .subtitulo {
-    font-size: 20px;     /* subtítulo maior */
-  }
-
-  .infos {
-    font-size: 18px;     /* infos maiores */
-  }
-
-  .botoes .btn {
-    font-size: 18px;     /* botões maiores */
-    padding: 10px 16px;
+    max-width: none; /* ocupa a tela */
+    width: 100%;
   }
 }
