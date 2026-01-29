@@ -115,3 +115,27 @@ body {
 #jacob {
   pointer-events: none;
 }
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 90%;      /* quase toda a tela */
+    padding: 30px 20px;  /* mais espaçamento interno */
+  }
+
+  .card h1 {
+    font-size: 32px;     /* título maior */
+  }
+
+  .subtitulo {
+    font-size: 20px;     /* subtítulo maior */
+  }
+
+  .infos {
+    font-size: 18px;     /* infos maiores */
+  }
+
+  .botoes .btn {
+    font-size: 18px;     /* botões maiores */
+    padding: 10px 16px;
+  }
+}
