@@ -15,24 +15,24 @@
     <div class="infos">
 
     <p class="info">📅 07 de Fevereiro</p>
-  <p class="info">⏰ 19h30</p>
+  <p class="info">⏰ 19h</p>
 
 <a
-  class="mapa"
-  href="https://www.google.com/maps/dir/?api=1&destination=Rua+Einaldo+Ramos+94+Pindamonhangaba"
-  target="_blank"
->
+ class="mapa" href="#" onclick="mostrarEndereco(); return false;">
   📍 Minha casa
+
+
+<p id="local" class="cidade"></p>
+
 </a>
 
 </div>
 <p></p>
 <div class="botoes"> 
-   <a href="https://wa.me/5512991841200?text=Oi!%20Confirmo%20minha%20presença%20🎉" target="_blank">
+<a>
  <button class="btn confirmar">EU VOU 🖤</button>
 </a>
-
-  <a href="https://wa.me/5512991841200?text=Putz...!%20Não%20conseguirei...%20" target="_blank">
+<a>
  <button class="btn negar">VOU FICAR EM CASA SOFRENDO</button>
 </a>
 </div>
@@ -42,6 +42,42 @@
 
 <img id="jacob" src="jacob.png" alt="Jacob Black">
 
+<script>
+function mostrarEndereco() {
+  const localEl = document.getElementById("local");
+
+  if (!navigator.geolocation) {
+    localEl.textContent = "Localização indisponível";
+    return;
+  }
+
+  localEl.textContent = "Detectando cidade...";
+
+  navigator.geolocation.getCurrentPosition(async (pos) => {
+    const lat = pos.coords.latitude;
+    const lon = pos.coords.longitude;
+
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+      );
+      const data = await res.json();
+
+      const cidade =
+        data.address.city ||
+        data.address.town ||
+        data.address.village ||
+        "Cidade não identificada";
+
+      localEl.textContent = cidade;
+    } catch {
+      localEl.textContent = "Erro ao obter cidade";
+    }
+  }, () => {
+    localEl.textContent = "Permissão negada";
+  });
+}
+</script>
 
 </body>
 </html>
